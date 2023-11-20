@@ -2,14 +2,14 @@
 session_start();
 
 // Start code by hanis
-if($_SESSION['admin']['id_member'] == 1){
-	$id = $_SESSION['admin']['id_member'];
-    // $hasil_profil = $lihat -> member_edit($id);
-}elseif($_SESSION['kasir']['id_member'] == 2){
-	$id = $_SESSION['kasir']['id_member'];
-    // $hasil_profil = $lihat -> member_edit($id);
-}
-else{echo "<h2>Data User tidak ada</h2>";}
+// if($_SESSION['admin']['id_member'] == 1){
+// 	$id = $_SESSION['admin']['id_member'];
+//     // $hasil_profil = $lihat -> member_edit($id);
+// }elseif($_SESSION['kasir']['id_member'] == 2){
+// 	$id = $_SESSION['kasir']['id_member'];
+//     // $hasil_profil = $lihat -> member_edit($id);
+// }
+// else{echo "<h2>Data User tidak ada</h2>";}
 // End code by hanis
 
 

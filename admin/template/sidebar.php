@@ -73,6 +73,14 @@ $hasil_profil = $lihat -> member_edit($id);
                           <li><a href="index.php?page=pengaturan">Pengaturan Toko</a></li>
                       </ul>
                   </li>
+                    
+                    <li class="mt btn-danger">
+                        <a class="logout" onclick="javascript: return confirm('Ingin Logout ?');" href="logout.php">
+                          <i class="fa fa-power-off"></i>
+                          <span>Log Out</span>
+                        </a>
+                  </li>
+                  
               </ul>
               <!-- sidebar menu end-->
           </div>

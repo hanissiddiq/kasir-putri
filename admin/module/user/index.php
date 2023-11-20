@@ -40,15 +40,18 @@
 									<div class="panel-heading">
 									</div>
 									<div class="panel-body">
-										<center><img src="assets/img/user/<?php echo $hasil['gambar'];?>"  alt="#" style="width:200px;border:4px solid #ddd;"/></center>			
+										<!-- <center><img src="assets/img/user/<?php // echo $hasil['gambar'];?>"  alt="#" style="width:200px;border:4px solid #ddd;"/></center>			 -->
+										<center><img src="assets/img/user/<?php echo "defaultImage.jpg"?>"  alt="#" style="width:200px;border:4px solid #ddd;"/></center>			
 									</div>
 									<div class="panel-footer">
 										<form method="POST" action="fungsi/edit/edit.php?gambar=user" enctype="multipart/form-data">
 											<input type="file" accept="image/*" name="foto">
 											<input type="hidden" value="<?php echo $hasil['gambar'];?>" name="foto2">
-											<input type="hidden"  name="id" value="<?php echo $hasil['id_member'];?>">
+											<!-- <input type="text"  name="id" value="<?php // echo $hasil['id_member'];?>"> -->
+											<input type="hidden"  name="id" value="<?php echo $id;?>">
 											<span class="pull-right">
 												<button type="submit"  class="btn btn-primary btn-sm" value="Tambah"><i class="fa fa-pencil"> Ganti Foto</i></button>
+
 											</span>
 										</form>
 										<br/>
@@ -109,7 +112,8 @@
 													</div>
 													<br>
 													<div class="form-actions pull-right">
-														<input type="hidden" name="id" value="<?php echo $hasil['id_member']; ?>">
+														<input type="hidden" name="id" value="<?php echo $id; ?>">
+														<!-- <input type="hidden" name="id" value="<?php //echo $hasil['id_member']; ?>"> -->
 														<button class="btn btn-primary" name="btn" value="Tambah" style="border-radius:0px;"><i class="fa fa-pencil"></i> Ubah Profil</button>
 													</div>
 												</fieldset>
