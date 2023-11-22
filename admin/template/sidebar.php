@@ -60,8 +60,15 @@ $hasil_profil = $lihat -> member_edit($id);
                           <span>Transaksi <span style="padding-left:2px;"> <i class="fa fa-angle-down"></i></span></span>
                       </a>
                       <ul class="sub">
+
+                        <!-- Start Code By Hanis -->
+                        <?php if($_SESSION['admin']['id_member'] == 1){ ?>
                           <li><a  href="index.php?page=jual">Transaksi Jual</a></li>
                           <li><a  href="index.php?page=laporan">Laporan Penjualan</a></li>
+                        <?php } elseif($_SESSION['kasir']['id_member'] == 2){ ?>
+                        <?php echo '<li><a  href="index.php?page=jual">Transaksi Jual</a></li>';}?>
+                            <!-- End Code By Hanis -->
+                            
                       </ul>
                   </li>
                   <li class="sub-menu">
