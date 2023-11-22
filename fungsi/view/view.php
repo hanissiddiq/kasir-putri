@@ -42,6 +42,15 @@
 				$hasil = $row -> fetchAll();
 				return $hasil;
 			}
+			function user(){
+				$sql = "SELECT * FROM login , member WHERE login.id_member = member.id_member 
+				ORDER BY id DESC";
+				$row = $this-> db -> prepare($sql);
+				$row -> execute();
+				$hasil = $row -> fetchAll();
+				return $hasil;
+			}
+
 
 			function barang(){
 				$sql = "select barang.*, kategori.id_kategori, kategori.nama_kategori
@@ -236,4 +245,26 @@
 				$hasil = $row -> fetch();
 				return $hasil;
 			}
+
+			// function user(){
+				// 	$sql = "SELECT * FROM login , member WHERE login.id_member = member.id_member 
+				// 	ORDER BY id DESC";
+				// 	$row = $this-> db -> prepare($sql);
+				// 	$row -> execute();
+				// 	$hasil = $row -> fetchAll();
+				// 	return $hasil;
+				// }
+				// end code hanis
+				
+
+			// start code hanis
+			function datalogin(){
+				$sql = "select member.*, login.*
+						from member inner join login on member.id_login = login.id_login";
+				$row = $this-> db -> prepare($sql);
+				$row -> execute();
+				$hasil = $row -> fetchAll();
+				return $hasil;
+			}
+			// end code hanis
 	 }

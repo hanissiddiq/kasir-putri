@@ -55,5 +55,16 @@ if(!empty($_SESSION['admin'])){
 		$row -> execute();
 		echo '<script>window.location="../../index.php?page=laporan&remove=hapus"</script>';
 	}
+
+	// start code hanis
+	if(!empty($_GET['user'])){
+		$id= $_GET['id'];
+		$data[] = $id;
+		$sql = 'DELETE FROM login WHERE id_login=?';
+		$row = $config -> prepare($sql);
+		$row -> execute($data);
+		echo '<script>window.location="../../index.php?page=user&&remove=hapus-data"</script>';
+	}
+	// end code hanis
 }
 

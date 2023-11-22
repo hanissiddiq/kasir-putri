@@ -71,4 +71,35 @@ if(!empty($_SESSION['admin'])){
 					window.location="../../index.php?page=jual#keranjang"</script>';
 		}
 	}
+
+	// start code by Hanis
+	if(!empty($_GET['user'])){
+		$id = $_POST['id'];
+		$user = $_POST['kategori'];
+		$nama = $_POST['nm_member'];
+		$alamat = $_POST['alamat_member'];
+		$telepon = $_POST['telepon'];
+		$email = $_POST['email'];
+		$gambar = $_POST['gambar'];
+		$nik = $_POST['nik'];
+	
+		
+		$data[] = $id;
+		$data[] = $user;
+		$data[] = $nama;
+		$data[] = $alamat;
+		$data[] = $telepon;
+		$data[] = $email;
+		$data[] = $satuan;
+		$data[] = $gambar;
+		$data[] = $nik;
+		// $sql = 'INSERT INTO barang (id_barang,id_kategori,nama_barang,merk,harga_beli,harga_jual,satuan_barang,stok,tgl_input) 
+		// 			VALUES (?,?,?,?,?,?,?,?,?) ';
+		$sql = 'INSERT INTO member (id_member,nm_member,alamat_member,telepon,email,gambar,NIK) 
+					VALUES (?,?,?,?,?,?,?) ';
+			$row = $config -> prepare($sql);
+			$row -> execute($data);
+			echo '<script>window.location="../../index.php?page=user&success=tambah-data"</script>';
+	}
+	// end code by Hanis
 }

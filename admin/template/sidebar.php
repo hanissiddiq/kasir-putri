@@ -52,6 +52,7 @@ $hasil_profil = $lihat -> member_edit($id);
                           <li><a  href="index.php?page=barang">Barang</a></li>
                           <li><a  href="index.php?page=kategori">Kategori</a></li>
                           <li><a  href="index.php?page=user">User</a></li>
+                          <li><a  href="index.php?page=pengguna">Profil Pengguna</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -68,7 +69,7 @@ $hasil_profil = $lihat -> member_edit($id);
                         <?php } elseif($_SESSION['kasir']['id_member'] == 2){ ?>
                         <?php echo '<li><a  href="index.php?page=jual">Transaksi Jual</a></li>';}?>
                             <!-- End Code By Hanis -->
-                            
+
                       </ul>
                   </li>
                   <li class="sub-menu">
