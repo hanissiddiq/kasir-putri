@@ -54,6 +54,7 @@
 						</form>
 						<?php }?>
 						<br/>
+						<div class="table-responsive">
 						<table class="table table-bordered" id="example1">
 							<thead>
 								<tr style="background:#DFF0D8;color:#333;">
@@ -81,6 +82,7 @@
 							<?php $no++; }?>
 							</tbody>
 						</table>
+						</div>
 						<div class="clearfix" style="padding-top:16%;"></div>
 				  </div>
               </div>

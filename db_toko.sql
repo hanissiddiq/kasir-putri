@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Nov 2023 pada 13.11
+-- Waktu pembuatan: 23 Nov 2023 pada 18.02
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.4.25
 
@@ -46,9 +46,16 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id`, `id_barang`, `id_kategori`, `nama_barang`, `merk`, `harga_beli`, `harga_jual`, `satuan_barang`, `stok`, `tgl_input`, `tgl_update`) VALUES
-(1, 'BR001', 1, 'Pensil', 'Fabel Castel', '1500', '3000', 'PCS', '103', '6 October 2020, 0:41', NULL),
-(2, 'BR002', 5, 'Sabun', 'Lifeboy', '1800', '3000', 'PCS', '38', '6 October 2020, 0:41', '6 October 2020, 0:54'),
-(3, 'BR003', 1, 'Pulpen', 'Standard', '1500', '2000', 'PCS', '70', '6 October 2020, 1:34', NULL);
+(2, 'BR002', 5, 'Sabun', 'Lifeboy', '1800', '3000', 'PCS', '20', '6 October 2020, 0:41', '6 October 2020, 0:54'),
+(3, 'BR003', 1, 'Pulpen', 'Standard', '1500', '2000', 'PCS', '70', '6 October 2020, 1:34', NULL),
+(4, 'BR004', 7, 'FANTA', 'NESTLE', '4000', '5000', 'PCS', '25', '22 November 2023, 10:44', NULL),
+(5, 'BR005', 6, 'TARO', 'INDOFOOD', '2000', '3000', 'PCS', '45', '22 November 2023, 10:45', NULL),
+(6, 'BR006', 5, 'Lifebouy Mint', 'Uniliver', '2000', '2500', 'PCS', '28', '22 November 2023, 14:40', NULL),
+(7, 'BR007', 5, 'Lux Rose', 'Uniliver', '2000', '2500', 'PCS', '30', '22 November 2023, 14:42', NULL),
+(8, 'BR008', 5, 'Shinzui Putih', 'Jepang', '3000', '4000', 'PCS', '40', '22 November 2023, 14:43', NULL),
+(9, 'BR009', 9, 'Makarizo Hair Spray', 'Makarizo', '20000', '23500', 'PCS', '25', '22 November 2023, 14:43', NULL),
+(10, 'BR010', 9, 'Nivea Men Cool Kick', 'Nivea', '25000', '27000', 'PCS', '40', '22 November 2023, 14:44', NULL),
+(11, 'BR011', 1, 'Buku AA 60Lbr', 'AA', '9000', '10000', 'PCS', '50', '22 November 2023, 17:34', '23 November 2023, 22:01');
 
 -- --------------------------------------------------------
 
@@ -70,7 +77,13 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`, `tgl_input`) VALUES
 (1, 'ATK', '7 May 2017, 10:23'),
 (5, 'Sabun', '7 May 2017, 10:28'),
 (6, 'Snack', '6 October 2020, 0:19'),
-(7, 'Minuman', '6 October 2020, 0:20');
+(7, 'Minuman', '6 October 2020, 0:20'),
+(9, 'Kosmetik', '22 November 2023, 10:47'),
+(10, 'Underwear', '23 November 2023, 22:40'),
+(11, 'Obat-obatan', '23 November 2023, 22:41'),
+(12, 'Peralatan Dapur', '23 November 2023, 22:41'),
+(13, 'Peralatan Bayi', '23 November 2023, 22:42'),
+(14, 'Tools', '23 November 2023, 22:43');
 
 -- --------------------------------------------------------
 
@@ -93,7 +106,8 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id_login`, `role_id`, `user`, `pass`, `is_active`, `id_member`) VALUES
 (1, '1', 'admin', '202cb962ac59075b964b07152d234b70', '1', 1),
-(2, '2', 'kasir', '202cb962ac59075b964b07152d234b70', '1', 2);
+(2, '2', 'kasir', '202cb962ac59075b964b07152d234b70', '1', 2),
+(5, '3', 'apit', 'c5d2ce527f3ce5477dfb27304200ba27', '1', 3);
 
 -- --------------------------------------------------------
 
@@ -103,6 +117,7 @@ INSERT INTO `login` (`id_login`, `role_id`, `user`, `pass`, `is_active`, `id_mem
 
 CREATE TABLE `member` (
   `id_member` int(11) NOT NULL,
+  `id_login` int(11) NOT NULL,
   `nm_member` varchar(255) NOT NULL,
   `alamat_member` text NOT NULL,
   `telepon` varchar(255) NOT NULL,
@@ -115,9 +130,9 @@ CREATE TABLE `member` (
 -- Dumping data untuk tabel `member`
 --
 
-INSERT INTO `member` (`id_member`, `nm_member`, `alamat_member`, `telepon`, `email`, `gambar`, `NIK`) VALUES
-(1, 'Putri', 'Bireuen', '081234567890', 'example@gmail.com', '1700481361pas photo.jpeg', '12314121'),
-(2, 'hanis', 'Matangglumpangdua', '08221188735', 'hanissiddiq10@gmail.com', 'unnamed.jpg', '1111153103980001');
+INSERT INTO `member` (`id_member`, `id_login`, `nm_member`, `alamat_member`, `telepon`, `email`, `gambar`, `NIK`) VALUES
+(1, 1, 'Ishlahul Lana Putri', 'Geudong', '081263638585', 'ishlahullana@gmail.com', '1700641688putri.jpeg', '20175020011'),
+(2, 2, 'Atharzaka', 'Peusnagan Siblah Krueng', '081263132787', 'armstrongaceh@gmail.com', '1700753882IMG_20211208_195141_990.jpg', '1111150303980001');
 
 -- --------------------------------------------------------
 
@@ -148,7 +163,17 @@ INSERT INTO `nota` (`id_nota`, `id_barang`, `id_member`, `jumlah`, `total`, `tan
 (6, 'BR001', 1, '2', '6000', '6 October 2020, 0:49', '10-2020'),
 (7, 'BR001', 1, '2', '6000', '6 October 2020, 1:15', '10-2020'),
 (8, 'BR002', 1, '2', '6000', '6 October 2020, 1:17', '10-2020'),
-(9, 'BR001', 1, '2', '6000', '6 October 2020, 1:20', '10-2020');
+(9, 'BR001', 1, '2', '6000', '6 October 2020, 1:20', '10-2020'),
+(10, 'BR001', 1, '2', '6000', '6 October 2020, 1:51', '11-2023'),
+(11, 'BR006', 1, '1', '2500', '22 November 2023, 14:41', '11-2023'),
+(12, 'BR001', 1, '2', '6000', '6 October 2020, 1:51', '11-2023'),
+(13, 'BR006', 1, '1', '2500', '22 November 2023, 14:41', '11-2023'),
+(14, 'BR002', 0, '3', '9000', '23 November 2023, 23:04', '11-2023'),
+(15, 'BR002', 0, '3', '9000', '23 November 2023, 23:04', '11-2023'),
+(16, 'BR002', 0, '3', '9000', '23 November 2023, 23:04', '11-2023'),
+(17, 'BR002', 0, '3', '9000', '23 November 2023, 23:04', '11-2023'),
+(18, 'BR002', 0, '3', '9000', '23 November 2023, 23:04', '11-2023'),
+(19, 'BR002', 0, '3', '9000', '23 November 2023, 23:04', '11-2023');
 
 -- --------------------------------------------------------
 
@@ -170,7 +195,7 @@ CREATE TABLE `penjualan` (
 --
 
 INSERT INTO `penjualan` (`id_penjualan`, `id_barang`, `id_member`, `jumlah`, `total`, `tanggal_input`) VALUES
-(23, 'BR001', 1, '2', '6000', '6 October 2020, 1:51');
+(25, 'BR002', 0, '3', '9000', '23 November 2023, 23:04');
 
 -- --------------------------------------------------------
 
@@ -191,7 +216,7 @@ CREATE TABLE `toko` (
 --
 
 INSERT INTO `toko` (`id_toko`, `nama_toko`, `alamat_toko`, `tlp`, `nama_pemilik`) VALUES
-(1, 'CV Daruttaqwa', 'Ujung Harapan', '081234567890', 'Fauzan Falah');
+(1, 'CV HUSADA NIAGA', 'BIREUEN', '0811677068', 'HUSNI M.NOER');
 
 --
 -- Indexes for dumped tables
@@ -247,19 +272,19 @@ ALTER TABLE `toko`
 -- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `member`
@@ -271,13 +296,13 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT untuk tabel `nota`
 --
 ALTER TABLE `nota`
-  MODIFY `id_nota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_nota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `toko`

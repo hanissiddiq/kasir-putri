@@ -37,8 +37,12 @@
 	<script type="text/javascript">
 		//datatable
 		$(function () {
-			$("#example1").DataTable();
-			$('#example2').DataTable();
+			$("#example1").DataTable({
+            "lengthMenu": [ 10, 25, 50, 75, 100 ]
+            } );
+			$('#example2').DataTable({
+                "lengthMenu": [ 10, 25, 50, 75, 100 ]
+            } );
 		});
 	</script>	
 		<?php
@@ -131,6 +135,14 @@
 				$(".bg-shadow").hide();
 			}
 		</script>
+
+<!-- sweetalertsweetalert@2.1.2 script -->
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
+" rel="stylesheet">
 
   </body>
 </html>

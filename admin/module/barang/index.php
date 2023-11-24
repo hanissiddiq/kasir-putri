@@ -47,7 +47,7 @@
 						<!-- Trigger the modal with a button -->
 						
 						<button type="button" class="btn btn-primary btn-md pull-right" data-toggle="modal" data-target="#myModal">
-							<i class="fa fa-plus"></i> Insert Data</button>
+							<i class="fa fa-plus "></i> Insert Data</button>
 						<a href="index.php?page=barang&stok=yes" style="margin-right :0.5pc;" 
 							class="btn btn-warning btn-md pull-right">
 							<i class="fa fa-list"></i> Sortir Stok Kurang</a>
@@ -59,6 +59,7 @@
 						
 						<!-- view barang -->	
 						<div class="modal-view">
+							<div class="table-responsive">
 							<table class="table table-bordered table-striped" id="example1">
 								<thead>
 									<tr style="background:#DFF0D8;color:#333;">
@@ -145,6 +146,7 @@
 									</tr>
 								</tfoot>
 							</table>
+							</div>
 						</div>
 						<div class="clearfix" style="margin-top:7pc;"></div>
 					<!-- end view barang -->

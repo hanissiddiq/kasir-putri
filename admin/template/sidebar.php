@@ -72,6 +72,8 @@ $hasil_profil = $lihat -> member_edit($id);
 
                       </ul>
                   </li>
+
+                  <?php if($_SESSION['admin']['id_member'] == 1){ ?>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-cog"></i>
@@ -81,6 +83,7 @@ $hasil_profil = $lihat -> member_edit($id);
                           <li><a href="index.php?page=pengaturan">Pengaturan Toko</a></li>
                       </ul>
                   </li>
+                  <?php } ?>
                     
                     <li class="mt btn-danger">
                         <a class="logout" onclick="javascript: return confirm('Ingin Logout ?');" href="logout.php">

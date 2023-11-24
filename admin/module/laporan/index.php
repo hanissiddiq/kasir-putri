@@ -137,6 +137,7 @@
 						<br/>
 						<!-- view barang -->	
 						<div class="modal-view">
+							<div class="table-responsive">
 							<table class="table table-bordered" id="example1">
 								<thead>
 									<tr style="background:#DFF0D8;color:#333;">
@@ -202,6 +203,7 @@
 									</tr>
 								</tfoot>
 							</table>
+						</div>
 						</div>
 						<div class="clearfix" style="padding-top:5pc;"></div>
 					</div>

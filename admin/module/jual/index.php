@@ -40,8 +40,11 @@
 									<h4><i class="fa fa-list"></i> Hasil Pencarian</h4>
 								</div>
 								<div class="panel-body">
-									<div id="hasil_cari"></div>
+									<div class="table-responsive">
+									<div id="hasil_cari">										
+									</div>
 									<div id="tunggu"></div>
+									</div>
 									
 								</div>
 							</div>
@@ -60,12 +63,15 @@
 								</div>
 								<div class="panel-body">
 									<div id="keranjang">
+										<div class="table-responsive">
 										<table class="table table-bordered">
 											<tr>
 												<td><b>Tanggal</b></td>
 												<td><input type="text" readonly="readonly" class="form-control" value="<?php echo date("j F Y, G:i");?>" name="tgl"></td>
 											</tr>
 										</table>
+										</div>
+										<div class="table-responsive">
 										<table class="table table-bordered" id="example1">
 											<thead>
 												<tr>
@@ -103,10 +109,12 @@
 												</tr>
 												<?php $no++; $total_bayar += $isi['total'];}?>
 											</tbody>
-									</table>
+										</table>
+										</div>
 									<br/>
 									<?php $hasil = $lihat -> jumlah(); ?>
 									<div id="kasirnya">
+										<div class="table-responsive">
 										<table class="table table-stripped">
 											<?php
 											// proses bayar dan ke nota
@@ -156,6 +164,7 @@
 											}
 											?>
 											<!-- aksi ke table nota -->
+											<div class="table-responsive-sm">
 											<form method="POST" action="index.php?page=jual&nota=yes#kasirnya">
 												<?php foreach($hasil_penjualan as $isi){;?>
 													<input type="hidden" name="id_barang[]" value="<?php echo $isi['id_barang'];?>">
@@ -178,6 +187,7 @@
 												</tr>
 											</form>
 											<!-- aksi ke table nota -->
+											
 											<tr>
 												<td>Kembali</td>
 												<td><input type="text" class="form-control" value="<?php echo $hitung;?>"></td>
@@ -191,7 +201,9 @@
 												</td>
 
 											</tr>
+											</div>
 										</table>
+										</div>
 										<br/>
 										<br/>
 									</div>

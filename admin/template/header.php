@@ -22,6 +22,14 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
+    <!-- sweetalert -->
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
+" rel="stylesheet">
+
         <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/datatables/jquery.dataTables.js"></script>
         <script type="text/javascript" src="assets/datatables/dataTables.bootstrap.js"></script>
@@ -30,6 +38,11 @@
 		.header{background:#328f6b; color:#fff;}
 		#main-content{ background:#fff;}
 		#hidden {display:none}
+
+    @media (min-width: 576px) { 
+      a.logo{font-size: 18px;} 
+    }
+
 	</style>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -55,10 +68,10 @@
                    
                 <!--  notification end -->
             </div>
-            <div class="top-menu">
+            <!-- <div class="top-menu">
             	<ul class="nav pull-right top-menu">
                     <li><a class="logout" onclick="javascript: return confirm('Ingin Logout ?');" href="logout.php">Logout</a></li>
             	</ul>
-            </div>
+            </div> -->
         </header>
       <!--header end-->

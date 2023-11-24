@@ -26,6 +26,13 @@
 				$hasil = $row -> fetch();
 				return $hasil;
 			}
+			function user_edit($id){
+				$sql = "select * from member where member.id_member= ?";
+				$row = $this-> db -> prepare($sql);
+				$row -> execute(array($id));
+				$hasil = $row -> fetch();
+				return $hasil;
+			}
 			
 			function toko(){
 				$sql = "select*from toko where id_toko='1'";
