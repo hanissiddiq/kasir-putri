@@ -76,30 +76,28 @@ if(!empty($_SESSION['admin'])){
 	if(!empty($_GET['user'])){
 		$id = $_POST['id'];
 		// $user = $_POST['user'];
-		$nama = $_POST['nama'];
-		$alamat = $_POST['alamat'];
-		$telepon = $_POST['telepon'];
-		$email = $_POST['email'];
-		//$gambar = $_POST['gambar'];
-		$nik = $_POST['nik'];
-		// $role_level = $_POST['level'];
+		$role = $_POST['role'];
+		$user = $_POST['user'];
+		$pass = md5($_POST['pass']);
+		$is_active = $_POST['is_active'];
+		$member = $_POST['member'];
+		
 	
 		
 		$data[] = $id;
-		// $data[] = $user;
-		$data[] = $nama;
-		$data[] = $alamat;
-		$data[] = $telepon;
-		$data[] = $email;
-		//$data[] = $gambar;
-		$data[] = $nik;
-		// $data[] = $role_level;
+		$data[] = $role;
+		$data[] = $user;
+		$data[] = $pass;
+		$data[] = $is_active;
+		$data[] = $member;
+		
+	
 		
 		// $sql = 'INSERT INTO barang (id_barang,id_kategori,nama_barang,merk,harga_beli,harga_jual,satuan_barang,stok,tgl_input) 
 		// 			VALUES (?,?,?,?,?,?,?,?,?) ';
 		// $sql = 'INSERT INTO login ("","",$user,$pass,1,$role_level) VALUES (?,?,?,?,?,?)';
-		$sql =  'INSERT INTO member (id_member,id_login,nm_member,alamat_member,telepon,email,gambar,NIK) 
-					VALUES (?,?,?,?,?,?,?,?) ';
+		$sql =  'INSERT INTO login (id_login,role_id,user,pass,is_active,id_member) 
+					VALUES (?,?,?,?,?,?) ';
 			$row = $config -> prepare($sql);
 			$row -> execute($data);
 

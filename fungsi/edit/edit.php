@@ -195,25 +195,28 @@ if(!empty($_SESSION['admin'])){
 	if(!empty($_GET['user'])){
 		$id = htmlentities($_POST['id']);
 	
-		$nama = htmlentities($_POST['nama']);
-		$alamat = htmlentities($_POST['alamat']);
-		$telepon = htmlentities($_POST['telepon']);
-		$gambar = htmlentities($_POST['gambar']);
-		$email = htmlentities($_POST['email']);
-		$nik = htmlentities($_POST['nik']);
+		$role = htmlentities($_POST['role']);
+		$user = htmlentities($_POST['user']);
+		$pass = htmlentities(md5($_POST['pass']));
+		$is_active = htmlentities($_POST['is_active']);
+		$member = htmlentities($_POST['member']);
 		
-		$data[] = $nama;
-		$data[] = $alamat;
-		$data[] = $telepon;
-		$data[] = $gambar;
-		$data[] = $email;
-		$data[] = $nik;
+		
+		
+		$data[] = $role;
+		$data[] = $user;
+		$data[] = $pass;
+		$data[] = $is_active;
+		$data[] = $member;
 		$data[] = $id;
+		
 
-		$sql = 'UPDATE member SET nm_member=?, alamat_member=?, 
-				telepon=?, gambar=?, email=?, nik=? WHERE id_member=?';
+		$sql = 'UPDATE login SET role_id=?, user=?, 
+				pass=?, is_active=?, member=? WHERE id_login=?';
 		$row = $config -> prepare($sql);
 		$row -> execute($data);
+		print_r($data);
+		die;
 		echo '<script>window.location="../../index.php?page=user/edit&user='.$id.'&success=edit-data"</script>';
 	}
 	// end code by Hanis

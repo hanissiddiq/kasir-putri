@@ -273,5 +273,22 @@
 				$hasil = $row -> fetchAll();
 				return $hasil;
 			}
+
+			function userlogin(){
+				$sql = "SELECT * FROM login ";
+				$row = $this-> db -> prepare($sql);
+				$row -> execute();
+				$hasil = $row -> fetchAll();
+				return $hasil;
+			}
+
+			function userlogin_edit($id){
+				$sql = "SELECT * FROM login where login.id_login= ?";
+				$row = $this-> db -> prepare($sql);
+				$row -> execute(array($id));
+				$hasil = $row -> fetch();
+				return $hasil;
+			}
+			
 			// end code hanis
 	 }

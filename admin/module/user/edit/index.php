@@ -6,7 +6,8 @@
       <!--main content start-->
 <?php 
 	$id = $_GET['user'];
-	$hasil = $lihat -> user_edit($id);
+	$hasil2 = $lihat ->  userlogin();
+	$hasil = $lihat ->  userlogin_edit($id);
 	// $hasil = $lihat -> user();
 
 	
@@ -30,35 +31,50 @@
 						<?php }?>
 						<table class="table table-striped">
 							<form action="fungsi/edit/edit.php?user=edit" method="POST">
-								<tr>
-									<td>ID User</td>
-									<td><input type="text" readonly="readonly" class="form-control" value="<?php echo $hasil['id_member'];?>" name="id"></td>
-								</tr>
-									<td>Nama</td>
-									<td><input type="text" class="form-control" value="<?php echo $hasil['nm_member'];?>" name="nama"></td>
-								</tr>
-								<tr>
-									<td>Alamat</td>
-									<td><input type="text" class="form-control" value="<?php echo $hasil['alamat_member'];?>" name="alamat"></td>
-								</tr>
-								<tr>
-									<td>Telepon</td>
-									<td><input type="number" class="form-control" value="<?php echo $hasil['telepon'];?>" name="telepon"></td>
-								</tr>
-								<tr>
-									<td>Gambar</td>
-									<td><input type="text" class="form-control" value="<?php echo $hasil['gambar'];?>" name="gambar"></td>
-								</tr>
-								<tr>
-									<td>Email</td>
-									<td><input type="text" class="form-control" value="<?php echo $hasil['email'];?>" name="email"></td>
-								</tr>
-								<tr>
-									<td>NIK</td>
-									<td><input type="text" class="form-control" value="<?php echo $hasil['NIK'];?>" name="nik"></td>
-								</tr>
-								
-								<tr>
+							<input type="text" name="id" value="<?php echo $hasil['id_login'];?>">
+							<tr>
+								<td>Role</td>
+								<td>
+								<select name="role" class="form-control" required>
+									<option value="#">Pilih Role</option>
+									<option value="1">Admin</option>
+									<option value="2">Kasir</option>
+									<option value="3">Pengguna</option>
+								</select>
+								</td>
+										<!-- <td><input type="text" placeholder="Role" required class="form-control" name="role"></td> -->
+									</tr>
+									<tr>
+										<td>Username</td>
+										<td><input type="text" value="<?php echo $hasil['user'];?>" placeholder="Username" required class="form-control"  name="user"></td>
+									</tr>
+									<tr>
+										<td>Password</td>
+										<td><input type="text" value="<?php echo $hasil['pass'];?>" placeholder="******" required class="form-control" name="pass"></td>
+									</tr>
+									<tr>
+										<td>Is Active</td>
+										<td>
+											<select name="is_active" class="form-control" required>
+												<option value="#">Pilih</option>
+												<option value="0">Non-Aktif</option>
+												<option value="1">Aktif</option>
+											</select>
+										</td>
+										<!-- <td><input type="number" placeholder="08xx xxxx xxxx" required class="form-control"  name="is_active"></td> -->
+									</tr>
+									<tr>
+										<td>Member</td>
+										<td>
+											<select name="member" class="form-control" required>
+												<option value="#">Pilih</option>
+												<option value="0">Non-Member</option>
+												<option value="1">Member</option>
+											</select>
+										</td>
+										<!-- <td><input type="number" placeholder="Upload" required class="form-control"  name="member"></td> -->
+									</tr>
+									<tr>
 									<td></td>
 									<td><button class="btn btn-primary"><i class="fa fa-edit"></i> Update Data</button></td>
 								</tr>
