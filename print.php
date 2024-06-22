@@ -16,6 +16,8 @@
 			<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
+					<img src="assets/img/logo.png" alt="" style="position: absolute; 
+					width: 60px; height:auto;">
 					<center>
 						<p><?php echo $toko['nama_toko'];?></p>
 						<p><?php echo $toko['alamat_toko'];?></p>
@@ -46,6 +48,9 @@
 						<br/>
 						Kembali : Rp.<?php echo number_format($_GET['kembali']);?>,-
 					</div>
+					<img src="assets/img/stamp_toko.png" alt="" 
+						style="position: absolute; width: 70px; height:auto; 
+						right: 130px; rotate:25deg">
 					<div class="clearfix"></div>
 					<center>
 						<p>Terima Kasih Telah berbelanja di toko kami !</p>
